@@ -1,0 +1,24 @@
+{
+  "name": "CAD-Ingenio",
+  "short_name": "CAD-Ingenio",
+  "description": "Mapa interactivo ligero del proyecto CAD-Ingenio en formato PWA instalable.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#1f6feb",
+  "lang": "es",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
