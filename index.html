@@ -514,6 +514,184 @@
   <link rel="apple-touch-icon" href="./icons/icon-192.png">
   <link rel="icon" href="./icons/icon-192.png">
 
+
+<style id="mobile-menu-optimization">
+/* Optimización general para pantallas de teléfono */
+@media (max-width: 768px){
+  #native-master-menu{
+    top: calc(env(safe-area-inset-top, 0px) + 72px) !important;
+    right: 8px !important;
+    width: min(94vw, 360px) !important;
+  }
+
+  #native-master-menu > summary{
+    padding: 12px 14px !important;
+    font-size: 15px !important;
+    line-height: 1.2 !important;
+    border-radius: 12px !important;
+  }
+
+  #native-master-menu .native-master-panel{
+    margin-top: 8px !important;
+    max-height: 68vh !important;
+    padding: 10px !important;
+    border-radius: 12px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+
+  #native-master-menu .native-master-panel > details{
+    margin-bottom: 10px !important;
+  }
+
+  #native-master-menu .native-master-panel > details > summary{
+    padding: 10px 12px !important;
+    font-size: 14px !important;
+    border-radius: 10px !important;
+  }
+
+  #native-master-menu details details{
+    margin: 6px 0 8px 8px !important;
+    padding-left: 8px !important;
+    border-left-width: 2px !important;
+  }
+
+  #native-master-menu details details > summary{
+    padding: 8px 8px !important;
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+    border-radius: 8px !important;
+  }
+
+  #native-master-menu .embedded-panel{
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+  }
+
+  #native-master-menu .embedded-panel > details{
+    margin: 6px 0 8px 0 !important;
+  }
+
+  #native-master-menu .embedded-panel > details > summary{
+    padding: 8px 9px !important;
+    font-size: 13px !important;
+    border-radius: 8px !important;
+  }
+
+  #native-master-menu .embedded-panel li{
+    margin: 5px 0 !important;
+    padding-left: 14px !important;
+    line-height: 1.3 !important;
+  }
+
+  #native-master-menu .embedded-panel a{
+    display: inline-block !important;
+    padding: 2px 0 !important;
+    line-height: 1.35 !important;
+  }
+
+  #native-master-menu .embedded-panel input[type="checkbox"]{
+    transform: scale(1.15);
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  #native-master-menu .embedded-panel label{
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    margin: 6px 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  #native-master-menu .embedded-panel button,
+  #native-master-menu .embedded-panel input[type="text"],
+  #native-master-menu .embedded-panel input[type="search"]{
+    min-height: 40px !important;
+    font-size: 14px !important;
+    border-radius: 8px !important;
+  }
+
+  #native-master-menu .embedded-panel button{
+    padding: 9px 12px !important;
+  }
+
+  #native-master-menu #native-placeholder-filter-panel .embedded-panel > div[style*="margin-top:8px;"]{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  #native-master-menu #native-placeholder-filter-panel .embedded-panel > div[style*="margin-top:8px;"] button{
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+
+  #native-master-menu #native-placeholder-search-panel input{
+    width: 100% !important;
+  }
+
+  /* Controles Leaflet algo más compactos pero táctiles */
+  .leaflet-top .leaflet-control {
+    margin-top: 92px !important;
+  }
+
+  .zoom-all-control a,
+  .leaflet-control-zoom a{
+    width: 42px !important;
+    height: 42px !important;
+    line-height: 42px !important;
+  }
+
+  /* Leyenda más compacta en móvil */
+  #legend-panel{
+    width: min(62vw, 240px) !important;
+    max-height: 30vh !important;
+    overflow-y: auto !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    bottom: 10px !important;
+    left: 8px !important;
+    padding: 8px !important;
+  }
+
+  /* Cabecera del proyecto más contenida */
+  #project-header{
+    margin: 6px 8px 6px 8px !important;
+    padding: 10px 12px !important;
+  }
+}
+
+/* Extra pequeño */
+@media (max-width: 430px){
+  #native-master-menu{
+    width: min(95vw, 350px) !important;
+    right: 6px !important;
+  }
+
+  #native-master-menu .native-master-panel{
+    max-height: 66vh !important;
+    padding: 8px !important;
+  }
+
+  #native-master-menu .native-master-panel > details > summary{
+    font-size: 13px !important;
+    padding: 9px 10px !important;
+  }
+
+  #native-master-menu details details > summary,
+  #native-master-menu .embedded-panel > details > summary{
+    font-size: 12.5px !important;
+    padding: 7px 8px !important;
+  }
+
+  #legend-panel{
+    width: min(64vw, 220px) !important;
+    font-size: 10.5px !important;
+  }
+}
+</style>
+
 </head><body><details id="native-master-menu"><summary>☰ Menú</summary><div class="native-master-panel"><details><summary>Filtro de mapa</summary><div id="native-placeholder-filter-panel"></div></details><details><summary>Provincias</summary><details id="menu-prov-malaga"><summary>Provincia de Málaga</summary><div id="native-placeholder-panel-malaga"></div></details><details id="menu-prov-granada"><summary>Provincia de Granada</summary><div id="native-placeholder-panel-granada"></div></details><details id="menu-prov-almeria"><summary>Provincia de Almería</summary><div id="native-placeholder-panel-almeria"></div></details></details><details><summary>Buscador</summary><div id="native-placeholder-search-panel"></div></details></div></details><div class="draggable-panel province-panel malaga-panel" id="panel-malaga" style="position: fixed; top: 128px; left: 12px; width: 290px; max-height: 34vh; overflow-y: auto; background-color: rgba(255,255,255,0.97); border: 2px solid #bdbdbd; z-index: 9999; font-size: 11px; padding: 10px; border-radius: 6px; line-height:1.25;;display:none !important"><div style="margin-top:6px;"><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Alcaucín</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(28); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">28</span> Torres Otero</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Algarrobo</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(22); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">22</span> Ingenio Algarrobo</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Benamargosa</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(29); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">29</span> Trapiche San José</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(30); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">30</span> Ingenio San Rafael</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Costa occidental</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(37); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">37</span> Trapiches Marbella/Mijas/Manilva</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Frigiliana</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(12); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#1f78b4;font-weight:bold;">12</span> Ingenio de Frigiliana</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(13); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">13</span> Maquinillas Frigiliana</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(14); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">14</span> Ingenio Rosario (La Molineta)</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(15); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">15</span> Maquinilla Rojas</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(16); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">16</span> Maquinilla Señá Justa</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(17); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">17</span> Maquinilla María Dolores</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Maro</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(1); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">1</span> Ingenio de Armengol</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(2); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">2</span> San Joaquín (Maro)</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(3); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#e31a1c;font-weight:bold;">3</span> Acueducto del Águila</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Málaga</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(31); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#ff7f00;font-weight:bold;">31</span> Martín Heredia</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(32); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">32</span> Azucarilla</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(33); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">33</span> San Guillermo (Huelin)</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(34); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">34</span> Hispania (Churriana)</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(35); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">35</span> Santísima Trinidad</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(36); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">36</span> Ntra. Sra. Victoria</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Nerja</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(4); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">4</span> San Antonio Abad</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(5); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">5</span> Ingenio Nuevo</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(6); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">6</span> San Miguel</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(7); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">7</span> Ntra. Sra. Angustias</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(8); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">8</span> San José (Chaparril)</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(9); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#1f78b4;font-weight:bold;">9</span> Mieles El Progreso</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(10); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">10</span> Independencia / San Clemente</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(11); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">11</span> Ingenio Ripoll</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Torre del Mar</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(23); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#ff7f00;font-weight:bold;">23</span> Nuestra Sra. del Carmen</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Torrox</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(18); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">18</span> Ingenio Concepción</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(19); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">19</span> Ingenio Bajo / San Rafael</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Torrox Costa</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(20); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">20</span> Ingenio San Javier</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(21); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#33a02c;font-weight:bold;">21</span> Acueducto San Javier</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Vélez-Málaga</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(24); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">24</span> Trapiche Carvajal</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(25); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#1f78b4;font-weight:bold;">25</span> Ingenio El Trapiche</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(26); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">26</span> Molino de las Monjas</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(27); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">27</span> Trapiche Zafárate</a></li></ul></details></div><div aria-label="Mover panel" class="drag-handle" title="Mover panel"></div><div style="margin-top:6px;"></div></div><div class="draggable-panel province-panel granada-panel" id="panel-granada" style="position: fixed; top: 128px; left: 320px; width: 290px; max-height: 34vh; overflow-y: auto; background-color: rgba(255,255,255,0.97); border: 2px solid #bdbdbd; z-index: 9999; font-size: 11px; padding: 10px; border-radius: 6px; line-height:1.25;;display:none !important"><div style="margin-top:6px;"><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Almuñécar</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(60); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">60</span> Ingenio mecanizado Peninsular</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(61); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">61</span> Ingenio de San José</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(62); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">62</span> La Magnífica</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(63); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#33a02c;font-weight:bold;">63</span> Arcos del Ingenio (asociado a Fab. San Sebastián)</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(64); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#33a02c;font-weight:bold;">64</span> Fábrica de San Sebastián</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(65); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#1f78b4;font-weight:bold;">65</span> Ingenio Real del Agua</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(66); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">66</span> Trapiche San Lázaro</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(67); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">67</span> Trapiche Las Peñuelas</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(68); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">68</span> Trapiches San Sebastián</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(69); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">69</span> Azucarera Nª Sª del Carmen</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(70); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#33a02c;font-weight:bold;">70</span> Trapiche Alto (La Victoria/la Redención)</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Jete</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(76); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">76</span> Ingenio de Jete</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">La Herradura (Almuñécar)</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(79); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">79</span> Trapiche de los Cervantes</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(80); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#33a02c;font-weight:bold;">80</span> Trapiche del Castillo</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Lobres (Salobreña)</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(71); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">71</span> Trapiche de Lobres (Fábrica de Azúcar Generalife)</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Molvízar</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(72); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">72</span> Ingenio de la Gloria (o de San Nicolás)</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(73); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">73</span> Ingenio de Santa Amalia</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(74); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">74</span> Ingenio de Nª Sª de la Aurora</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Motril</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(38); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">38</span> Santa Isabel</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(39); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">39</span> Nª Sª Almudena</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(40); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">40</span> San Luis</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(41); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#e31a1c;font-weight:bold;">41</span> Nª Sª del Pilar</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(42); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#ff7f00;font-weight:bold;">42</span> Nª Sª de la Cabeza (Ingenio de la rampa)</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(43); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#33a02c;font-weight:bold;">43</span> Nª Sª Angustias (El Ingenio)</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(44); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#1f78b4;font-weight:bold;">44</span> San Fernando</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(45); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#1f78b4;font-weight:bold;">45</span> Nª Sª Lourdes</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(46); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">46</span> Nª Sª Carmen (Azucarera El Carmen)</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(47); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">47</span> San José (San José del Varadero)</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(48); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#33a02c;font-weight:bold;">48</span> Ingenio de la Palma</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(49); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">49</span> Ingenio Viejo</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(50); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">50</span> Ingenio del Trapiche</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(51); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">51</span> Ingenio del Toledano</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(52); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">52</span> Ingenio Jerónimo Hurtado</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(53); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">53</span> Ingenio de Vicencio</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(54); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">54</span> Trapiche Viejo</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(55); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">55</span> Ingenio de San Antonio</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(58); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">58</span> Trapiche de Pataura</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Otívar</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(77); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">77</span> Ingenio de Otívar</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(78); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">78</span> Trapiche de Cázulas</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Salobreña</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(56); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#e31a1c;font-weight:bold;">56</span> Nª Sª del Rosario (Guadalfeo)</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(57); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">57</span> Ingenio de la Villa (Trapiche Real)</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(59); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">59</span> Ingenio de San José (La Caleta)</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Ítrabo</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(75); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">75</span> Ingenio de Ítrabo</a></li></ul></details></div><div aria-label="Mover panel" class="drag-handle" title="Mover panel"></div><div style="margin-top:6px;"></div></div><div class="draggable-panel province-panel almeria-panel" id="panel-almeria" style="position: fixed; top: 128px; left: 628px; width: 290px; max-height: 34vh; overflow-y: auto; background-color: rgba(255,255,255,0.97); border: 2px solid #bdbdbd; z-index: 9999; font-size: 11px; padding: 10px; border-radius: 6px; line-height:1.25;;display:none !important"><div style="margin-top:6px;"><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Adra</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(81); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">81</span> Ingenio Viejo o Santa Julia / Ingenio de Caicedo</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(82); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">82</span> Fábrica Castell e Hijos / Ingenio de San Nicolás o de Heredia</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(83); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">83</span> Fábrica Nuestra Señora de la Aurora / Ingenio de Sánchez o de La Alquería</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(84); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">84</span> Fábrica de San Luis</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(85); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">85</span> Ingenio de Manuel García Carmona / Fábrica Santa Amalia</a></li><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(86); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#33a02c;font-weight:bold;">86</span> Azucarera de Adra</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Almería</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(87); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#33a02c;font-weight:bold;">87</span> Ingenio de Nuestra Señora de Montserrat</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Berja y Dalías</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(88); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">88</span> Trapiches de Castala y Celín</a></li></ul></details><details style="margin-top:4px;"><summary style="cursor:pointer; font-weight:bold;">Vera y Cuevas del Almanzora</summary><ul style="margin:6px 0 0 0; padding-left:8px;"><li style="margin:2px 0; list-style:none;"><a href="#" onclick="zoomToBien(89); return false;" style="text-decoration:none; color:#222;"><span style="display:inline-block;width:28px;color:#9e9e9e;font-weight:bold;">89</span> Intentos de ingenios preindustriales</a></li></ul></details></div><div aria-label="Mover panel" class="drag-handle" title="Mover panel"></div><div style="margin-top:6px;"></div></div><div class="draggable-panel ui-panel legend-panel embedded-panel-outside-menu" id="legend-panel" style="position: fixed;   width: 320px;
 background-color: rgba(255,255,255,0.97); border: 2px solid #bdbdbd; z-index: 9999;
 font-size: 12px; padding: 10px; border-radius: 6px; line-height:1.35;; position: fixed; bottom: 24px; left: 12px; display:block !important; width: 320px;"><div class="drag-handle">Leyenda</div><div style="margin-top:6px;"></div><b>Simbología</b><br/><b>Protección (color)</b><br/><span style="color:#9e9e9e;font-weight:bold;">●</span> Sin protección<br/><span style="color:#1f78b4;font-weight:bold;">●</span> Protección urbanística local / municipal<br/><span style="color:#33a02c;font-weight:bold;">●</span> Catalogación local / indirecta<br/><span style="color:#ff7f00;font-weight:bold;">●</span> Catalogación parcial / municipal<br/><span style="color:#e31a1c;font-weight:bold;">●</span> BIC
